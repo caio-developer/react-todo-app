@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-export const GlobalStorage = React.createContext();
+export const GlobalContext = React.createContext();
 
-function Storage({children}) {
+function Storage({ children }) {
+  const [cart, setCart] = React.useState([]);
+
   return (
-    <GlobalStorage.Provider>
+    <GlobalContext.Provider value={{ cartCounter: cart.length }}>
       {children}
-    </GlobalStorage.Provider>
-  )
+    </GlobalContext.Provider>
+  );
 }
 
-export default Storage
+export default Storage;
