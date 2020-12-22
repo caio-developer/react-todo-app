@@ -1,19 +1,21 @@
 import React from 'react';
+import Storage from './GlobalContext';
 import './style.css';
 
-
 function App() {
-  return <>
-    {/* Header */}
+  return (
+    <Storage>
+      {/* Header */}
 
-    {/* Option List */}
+      {/* Option List */}
 
-    {/* Product Viewer */}
+      {/* Product Viewer */}
 
-    {/* Cart */}
+      {/* Cart */}
 
-    {/* Buy Page */}
-  </>;
+      {/* Buy Page */}
+    </Storage>
+  );
 }
 
 export default App;
