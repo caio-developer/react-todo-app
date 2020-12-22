@@ -14,7 +14,6 @@ function Storage({ children }) {
 
   return (
     <GlobalContext.Provider value={{ cartCounter: cart.length, notification }}>
-      <button onClick={() => setNotification(<p>Notificação</p>)}></button>
       {children}
     </GlobalContext.Provider>
   );
