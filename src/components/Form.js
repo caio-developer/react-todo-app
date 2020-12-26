@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ToDoContext } from '../ToDoContext';
 
 function Form() {
-  const { addNewTodo } = React.useContext(ToDoContext);
+  const { addNewTodo, clearTodoList } = React.useContext(ToDoContext);
   const [value, setValue] = useState('');
 
   return (
@@ -13,6 +13,7 @@ function Form() {
         onChange={e => setValue(e.target.value)}
       />
       <button onClick={() => addNewTodo(value)}>Add</button>
+      <button onClick={() => clearTodoList()}>Clear</button>
     </div>
   );
 }

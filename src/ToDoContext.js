@@ -9,8 +9,12 @@ export default function ToDoContextProvider({ children }) {
     setTodo(prevState => [...prevState, text]);
   }
 
+  function clearTodoList() {
+    setTodo([]);
+  }
+
   return (
-    <ToDoContext.Provider value={{ addNewTodo, todo }}>
+    <ToDoContext.Provider value={{ addNewTodo, todo, clearTodoList }}>
       {children}
     </ToDoContext.Provider>
   );
