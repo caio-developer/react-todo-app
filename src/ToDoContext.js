@@ -14,12 +14,18 @@ export default function ToDoContextProvider({ children }) {
     setTodo([]);
   }
 
+  function editTodoItem(newText, id) {
+    const newTodos = todo.map(item => item.id === id ? {text: newText, id} : item);
+
+    setTodo(newTodos);
+  }
+
   function removeTodoItem(id) {
     setTodo(todo.filter(item => item.id !== id));
   }
 
   return (
-    <ToDoContext.Provider value={{ addNewTodo, todo, clearTodoList, removeTodoItem }}>
+    <ToDoContext.Provider value={{ addNewTodo, todo, clearTodoList, removeTodoItem, editTodoItem }}>
       {children}
     </ToDoContext.Provider>
   );

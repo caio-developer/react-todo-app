@@ -14,16 +14,18 @@ function Form() {
         onChange={e => setValue(e.target.value)}
         ref={inputRef}
       />
-      <button
-        onClick={() => {
-          addNewTodo(value);
-          setValue('');
-          inputRef.current.focus();
-        }}
-      >
-        Add
-      </button>
-      <button onClick={() => clearTodoList()}>Clear</button>
+      <div className='buttons'>
+        <button
+          onClick={() => {
+            addNewTodo(value);
+            setValue('');
+            inputRef.current.focus();
+          }}
+        >
+          Add
+        </button>
+        <button onClick={() => clearTodoList()}>Clear</button>
+      </div>
     </div>
   );
 }

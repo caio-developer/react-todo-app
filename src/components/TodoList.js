@@ -8,7 +8,11 @@ function TodoList() {
   return (
     <div className='list-wrapper'>
       <ul className='list'>
-        {todo.map((item, index) => <TodoItem item={item} index={index}/>)}
+        {todo.length === 0 ? (
+          <p style={{ textAlign: 'center', marginBottom: '2rem' }}>No tasks yet</p>
+        ) : (
+          todo.map((item, index) => <TodoItem item={item} index={index} />)
+        )}
       </ul>
     </div>
   );
